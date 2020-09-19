@@ -9,4 +9,6 @@ RUN apt-get -y update && \
     # 日本時間に変更
     ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     chmod 0644 /var/spool/cron/crontabs/root && \
-    /etc/init.d/cron restart
+    /etc/init.d/cron restart && \
+    rm -f /var/run/crond.pid && \
+    service cron restart
