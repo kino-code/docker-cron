@@ -10,12 +10,8 @@ RUN apt-get -y update && \
 # 日本時間に変更
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-RUN service cron restart
-
 RUN rm -f /var/run/crond.pid
-
-RUN service cron restart
 
 RUN chmod 600 /var/spool/cron/crontabs/root
 
-RUN /etc/init.d/cron restart
+RUN service cron restart
