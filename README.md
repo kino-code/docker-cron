@@ -6,7 +6,7 @@
 
 ```cd python-cron```
 
-```docker-compose up -d```
+```docker-compose up --build -d```
 
 ```docker exec python-cron cron restart bash```
 
